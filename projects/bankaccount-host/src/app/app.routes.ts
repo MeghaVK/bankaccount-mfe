@@ -36,6 +36,11 @@ export const routes: Routes = [
           loadChildren: ()=> loadRemoteModule('profile-mfe','./routes').then(m=>m.routes)
         }
     ]
+  },
+   // Unknown URL
+  {
+    path: '**',
+    redirectTo: 'login'
   }
   
 ];
