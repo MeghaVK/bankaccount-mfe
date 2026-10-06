@@ -12,14 +12,17 @@ const authRoutes= require('./routes/auth.routes');
 
 
 app.use(
-    cors({
-        origin:[
-            'http://localhost:4200',
-            'http://localhost:4201',
-            'http://localhost:4202',
-            'http://localhost:4203',
-        ]
-    })
+  cors({
+    origin: [
+      'http://localhost:4200',
+      'http://localhost:4201',
+      'http://localhost:4202',
+      'http://localhost:4203',
+      'https://bankaccount-mfe.onrender.com'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  })
 );
 app.use(express.json());
 app.get('/api/health',(req,res)=>{
