@@ -3,11 +3,19 @@ import { withNativeFederation, fromPackageJson } from '@angular-architects/nativ
 export default withNativeFederation({
   name: 'bankaccount-host',
 
+  // remotes: {
+  //   'dashboard-mfe': 'http://localhost:4201/remoteEntry.json',
+  //   'transactions-mfe': 'http://localhost:4202/remoteEntry.json',
+  //   'profile-mfe': 'http://localhost:4203/remoteEntry.json'
+  // },
+
   remotes: {
-    'dashboard-mfe': 'http://localhost:4201/remoteEntry.json',
-    'transactions-mfe': 'http://localhost:4202/remoteEntry.json',
-    'profile-mfe': 'http://localhost:4203/remoteEntry.json'
+    'dashboard-mfe': 'https://bankaccount-dashboard.onrender.com/remoteEntry.json',
+    'transactions-mfe': 'https://bankaccount-transactions.onrender.com/remoteEntry.json',
+    'profile-mfe': 'https://bankaccount-profile.onrender.com/remoteEntry.json'
   },
+
+ 
 
   shared: fromPackageJson({ singleton: true, strictVersion: true, requiredVersion: 'auto', build: 'package' })
     // includeSecondaries is an opt-out of ignoreUnusedDeps, so all of
