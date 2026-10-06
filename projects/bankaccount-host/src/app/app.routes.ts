@@ -8,6 +8,12 @@ export const routes: Routes = [
 
      // Public
   {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+
+  {
     path: 'login',
     component: Login
   },
