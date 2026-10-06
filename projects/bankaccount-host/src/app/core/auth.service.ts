@@ -8,7 +8,9 @@ import { tap } from 'rxjs';
 })
 export class AuthService {
     private readonly http = inject(HttpClient);
-    private readonly apiUrl = 'http://localhost:5000/api/auth';
+    // private readonly apiUrl = 'http://localhost:5000/api/auth';
+private readonly apiUrl = 'https://bank-api.getvoroa.com/api/auth';
+    
     private readonly tokenKey = 'bankaccount-token';
     private readonly userKey = 'bankaccount-user';
 
