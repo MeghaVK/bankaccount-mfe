@@ -1,0 +1,48 @@
+@use './colorvariables' as v;
+@use './responsive' as r;
+
+.fe-page {
+  min-height: 100vh;
+  background: v.$body-bg;
+  padding: v.$spacing-xl;
+
+  @include r.tablet {
+    padding: v.$spacing-lg;
+  }
+
+  @include r.mobile {
+    padding: v.$spacing-md;
+  }
+}
+
+.fe-container {
+  width: 100%;
+  max-width: v.$container-max-width;
+  margin-inline: auto;
+}
+
+.fe-card {
+  background: v.$surface;
+  border: 1px solid v.$border-color;
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow-sm;
+}
+
+.fe-section-title {
+  color: v.$text-primary;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.fe-muted {
+  color: v.$text-muted;
+}
+
+.fe-primary {
+  color: v.$primary;
+}
+
+.fe-bg-primary {
+  background: v.$primary;
+  color: #fff;
+}

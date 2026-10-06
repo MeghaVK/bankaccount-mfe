@@ -28,6 +28,30 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/bankaccount-host/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/bankaccount-host/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/dashboard-mfe/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/dashboard-mfe/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/transactions-mfe/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/transactions-mfe/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/profile-mfe/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/profile-mfe/tsconfig.spec.json"
     }
   ]
 }

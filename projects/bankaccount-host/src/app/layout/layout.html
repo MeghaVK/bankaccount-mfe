@@ -1,0 +1,181 @@
+<div class="app-shell">
+
+  <!-- ============================= -->
+  <!-- Navbar -->
+  <!-- ============================= -->
+
+  <nav class="navbar navbar-expand-lg app-navbar">
+
+    <div class="container-fluid px-3 px-lg-4">
+
+      <!-- Logo -->
+
+      <a
+        class="navbar-brand app-brand"
+        routerLink="/dashboard"
+      >
+
+        <span class="brand-icon">
+          <i class="bi bi-wallet2"></i>
+        </span>
+
+        <span>
+          Fin<span>Edge</span>
+        </span>
+
+      </a>
+
+
+      <!-- Mobile Toggle -->
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <!-- Navigation -->
+
+      <div
+        id="mainNavbar"
+        class="collapse navbar-collapse"
+      >
+
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              routerLink="/dashboard"
+              routerLinkActive="active"
+            >
+              <i class="bi bi-grid-1x2 me-1"></i>
+              Dashboard
+            </a>
+
+          </li>
+
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              routerLink="/transactions"
+              routerLinkActive="active"
+            >
+              <i class="bi bi-arrow-left-right me-1"></i>
+              Transactions
+            </a>
+
+          </li>
+
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              routerLink="/profile"
+              routerLinkActive="active"
+            >
+              <i class="bi bi-person me-1"></i>
+              Profile
+            </a>
+
+          </li>
+
+        </ul>
+
+
+        <!-- User -->
+
+        <div class="user-area">
+
+          <div class="user-info">
+
+            <div class="user-avatar">
+              {{ authService.user$()?.name?.charAt(0) }}
+            </div>
+
+            <div class="d-none d-xl-block">
+
+              <div class="user-name">
+                {{ authService.user$()?.name }}
+              </div>
+
+              <div class="user-role">
+                {{ authService.user$()?.role }}
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="btn logout-button"
+            (click)="logout()"
+          >
+
+            <i class="bi bi-box-arrow-right"></i>
+
+            <span class="d-none d-md-inline">
+              Logout
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ============================= -->
+  <!-- Main Content -->
+  <!-- ============================= -->
+
+  <main class="app-content">
+
+    <router-outlet></router-outlet>
+
+  </main>
+
+
+  <!-- ============================= -->
+  <!-- Footer -->
+  <!-- ============================= -->
+
+  <footer class="app-footer">
+
+    <div class="container-fluid px-3 px-lg-4">
+
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2"
+      >
+
+        <span>
+          © 2026 FinEdge Finance
+        </span>
+
+        <span>
+          Secure financial management
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</div>

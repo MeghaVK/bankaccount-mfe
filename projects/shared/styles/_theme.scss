@@ -1,0 +1,67 @@
+@use './colorvariables' as v;
+
+// =====================================================
+// FinEdge Global Theme
+// =====================================================
+
+:root {
+  --fe-primary: #{v.$primary};
+  --fe-primary-dark: #{v.$primary-dark};
+  --fe-primary-light: #{v.$primary-light};
+  --fe-accent: #{v.$accent};
+
+  --fe-success: #{v.$success};
+  --fe-warning: #{v.$warning};
+  --fe-danger: #{v.$danger};
+
+  --fe-body-bg: #{v.$body-bg};
+  --fe-surface: #{v.$surface};
+
+  --fe-text-primary: #{v.$text-primary};
+  --fe-text-secondary: #{v.$text-secondary};
+  --fe-text-muted: #{v.$text-muted};
+
+  --fe-border: #{v.$border-color};
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: v.$body-bg;
+  color: v.$text-primary;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: v.$primary;
+  text-decoration: none;
+
+  &:hover {
+    color: v.$primary-dark;
+  }
+}

@@ -1,0 +1,39 @@
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const PORT = process.env.PORT || 5000;
+const dashboardRoutes = require('./routes/dashborad.routes');
+const transactionsRoutes = require('./routes/transactions.routers');
+const profileRoutes = require('./routes/profile.routes');
+const authRoutes= require('./routes/auth.routes');
+
+
+
+
+
+app.use(
+    cors({
+        origin:[
+            'http://localhost:4200',
+            'http://localhost:4201',
+            'http://localhost:4202',
+            'http://localhost:4203',
+        ]
+    })
+);
+app.use(express.json());
+app.get('/api/health',(req,res)=>{
+    res.json({
+        success:true,
+        message:'API is working fine'
+    })
+
+});
+app.use('/api/dashboard',dashboardRoutes);
+app.use('/api/transactions', transactionsRoutes);
+app.use('/api/profile', profileRoutes);
+app.use('/api/auth',authRoutes);
+
+app.listen(PORT,()=>{
+    console.log(`Server is running on port http://localhost:${PORT}`);
+})
