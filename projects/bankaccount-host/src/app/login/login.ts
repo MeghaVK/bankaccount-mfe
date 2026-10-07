@@ -76,4 +76,14 @@ export class Login {
       })
   }
 
+
+  logout(): void {
+
+  this.authService.logout();
+
+  this.router.navigate([
+    '/login'
+  ]);
+
+}
 }

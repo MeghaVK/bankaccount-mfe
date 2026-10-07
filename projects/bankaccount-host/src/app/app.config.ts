@@ -4,6 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideToastr } from 'ngx-toastr';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './core/auth.interceptor';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -17,6 +18,10 @@ export const appConfig: ApplicationConfig = {
       positionClass:'toast-top-right',
       closeButton:true,
       progressBar:true
-    })
+    }),
+
+    provideHttpClient(
+      withInterceptors([authInterceptor])
+    )
   ]
 };
