@@ -47,11 +47,11 @@ private readonly apiUrl = 'https://bank-api.getvoroa.com/api/auth';
  logout(): void {
 
     localStorage.removeItem(
-      'bankaccount_token'
+      'bankaccount-token'
     );
 
     localStorage.removeItem(
-      'bankaccount_user'
+      'bankaccount-user'
     );
 
     this.currentUser.set(null);
