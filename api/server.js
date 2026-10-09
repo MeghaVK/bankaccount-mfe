@@ -12,19 +12,36 @@ const profileRoutes = require('./routes/profile.routes');
 
 
 
-app.use(
-  cors({
-    origin: [
-      'http://localhost:4200',
-      'http://localhost:4201',
-      'http://localhost:4202',
-      'http://localhost:4203',
-      'https://bankaccount-mfe.onrender.com'
-    ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-  })
-);
+// app.use(
+//   cors({
+//     origin: [
+//       'http://localhost:4200',
+//       'http://localhost:4201',
+//       'http://localhost:4202',
+//       'http://localhost:4203',
+//       'https://bankaccount-mfe.onrender.com'
+//     ],
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Authorization']
+//   })
+// );
+
+
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests without an Origin header, such as local health checks.
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error(`CORS blocked origin: ${origin}`));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+
 app.use(express.json());
 app.get('/api/health',(req,res)=>{
     res.json({
