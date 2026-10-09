@@ -13,12 +13,13 @@ interface ApiResponse<T>{
 })
 export class DashboardService{
     private readonly http = inject(HttpClient);
+     private readonly apiUrl = `${environment.apiUrl}/dashboard`;
     // private readonly apiUrl = 'https://bankaccount-mfe.onrender.com/api/dashboard';
     //  private readonly apiUrl = environment.production?environment.apiUrl : !environment.production;
 
     getDashboardData(): Observable<Dashboarddata>{
 console.log(environment.production)
-// if(ev)
-        return this.http.get<ApiResponse<Dashboarddata>>(`${environment.apiUrl}/dashboard`).pipe(map(response=>response.data))
+
+        return this.http.get<Dashboarddata>(this.apiUrl)
     }
 }
