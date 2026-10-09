@@ -20,7 +20,8 @@ const allowedOrigins = [
   'https://bankaccount-dashboard.onrender.com',
   'https://bankaccount-transactions.onrender.com',
   'https://bankaccount-profile.onrender.com',
-  'https://bank-api.getvoroa.com'
+  'https://bank-api.getvoroa.com',
+  
 ];
 
 app.use(cors({
