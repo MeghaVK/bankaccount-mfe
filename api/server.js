@@ -2,10 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
-const dashboardRoutes = require('./routes/dashborad.routes');
-const transactionsRoutes = require('./routes/transactions.routers');
-const profileRoutes = require('./routes/profile.routes');
 const authRoutes= require('./routes/auth.routes');
+const dashboardRoutes = require('./routes/dashborad.routes');
+const transactionsRoutes = require('./routes/transactions.routes');
+const profileRoutes = require('./routes/profile.routes');
+
 
 
 
