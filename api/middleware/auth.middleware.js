@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET ||  ' bank-demo-secret';
+const JWT_SECRET = process.env.JWT_SECRET ||  'bank-demo-secret';
 
 function authenticateToken(req,res,next){
 
     const authHeader = req.headers.authorization;
 
-    const token = authHeader?.startWith('Bearer')
+    const token = authHeader?.startsWith('Bearer ')
     ? authHeader.substring(7) : null;
 
     // Rejectt request without a token

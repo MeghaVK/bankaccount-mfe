@@ -62,6 +62,8 @@ export class Transactions implements OnInit  {
 
 
     ngOnInit():void{
+      const token = localStorage.getItem('bankaccount-token');
+    console.log(token)
       this.startPolling();
     }
 private startPolling(): void {

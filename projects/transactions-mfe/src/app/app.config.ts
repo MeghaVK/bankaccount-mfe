@@ -7,7 +7,6 @@ import { TransactionsService } from './services/transactions.service';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes),
-    TransactionsService
+    provideRouter(routes)
   ]
 };
